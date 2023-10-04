@@ -6,6 +6,12 @@ import Footer from "../components/Footer";
 
 function Home() {
   const [carData, setCarData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 6;
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   const fetchData = async () => {
     try {
@@ -21,14 +27,32 @@ function Home() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    // Calculate currentData whenever currentPage or carData changes
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const currentData = carData.slice(startIndex, endIndex);
+
+    // Update the state with the current data
+    setCurrentData(currentData);
+  }, [currentPage, carData]);
+
+  // State to hold the data to be displayed in CarCard
+  const [currentData, setCurrentData] = useState([]);
+
   return (
     <>
       <div>
         <Navbar />
         <div className="flex mx-auto">
-          <CarCard carData={carData} />
+          <CarCard carData={currentData} />
         </div>
-        <Footer carData={carData} />
+        <Footer
+          carData={carData}
+          currentPage={currentPage}
+          totalPages={Math.ceil(carData.length / pageSize)}
+          onPageChange={handlePageChange}
+        />
       </div>
     </>
   );

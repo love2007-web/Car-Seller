@@ -1,34 +1,17 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { People, FuelPump, Speedometer } from "react-bootstrap-icons";
-import axios from "axios";
 
-const CarCard = () => {
-  const [carData, setcarData] = useState([]);
-  const fetchData = async () => {
-    try {
-      const response = await axios.get("http://localhost:3000/cars");
-      console.log(response);
-      const data = response.data;
-      console.log(data);
-      setcarData(data);
+import { People, FuelPump, Speedometer,Heart } from "react-bootstrap-icons";
 
-      // Handle the data as needed (e.g., update state or display it in your component)
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
 
-  useEffect(() => {
-    fetchData();
-  }, []); // Empty dependency array to fetch data once when the component mounts
+const CarCard = (props) => {
+   const {carData} = props;
 
   return (
     <>
-      <div className="flex flex-wrap w-screen">
+      <div className="flex flex-wrap w-screen mx-auto">
         {carData.map((car) => (
           <div
-            className="w-96 p-2 bg-slate-200 rounded-lg mx-4 shadow-xl h-auto my-5"
+            className="w-96 p-2 bg-slate-200 rounded-lg mx-4 shadow-xl h-auto my-3 mx-auto"
             key={car.id}
           >
             <div className="w-full h-64">
@@ -69,9 +52,25 @@ const CarCard = () => {
                   <p>{car.transmission} </p>
                 </div>
               </div>
-              <hr/>
-              <div>
-                <p>Price: ${car.price}</p>
+              <hr className="border border-1 border-slate-300" />
+              <div className="flex justify-between items-center">
+                <div>
+                  <p>
+                    <span className="text-xl font-medium">${car.price}</span>
+                    /month
+                  </p>
+                </div>
+                <div className="flex items-center mt-3">
+                  <button className="bg-indigo-200 mr-3 rounded-md p-2">
+                    <Heart
+                      color="royalblue"
+                      className="text-xl font-semibold"
+                    />
+                  </button>
+                  <button className="bg-blue-600 text-white font-medium rounded-md p-2">
+                    Rent now
+                  </button>
+                </div>
               </div>
             </div>
           </div>

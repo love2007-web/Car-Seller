@@ -38,15 +38,51 @@
     },
     {
       "id": 4,
-      "make": "Volkswagen",
-      "model": "T-Cross",
+      "make": "Cadillac",
+      "model": "Escalade",
       "year": 2020,
       "capacity": 4,
       "fuelType": "Gasoline",
-      "range": "5.3km/1-litre",
+      "range": "7.7km/1-litre",
       "transmission": "Automatic",
-      "price": 400,
-      "image": "https://carsales.pxcrush.net/car/spec/S0006LKM.jpg?pxc_method=gravityfill&pxc_bgtype=self&pxc_size=720,480&watermark=816504619"
+      "price": 620,
+      "image": "https://media.ed.edmunds-media.com/cadillac/escalade/2020/oem/2020_cadillac_escalade_4dr-suv_platinum_fq_oem_1_1600.jpg"
+    },
+    {
+      "id": 5,
+      "make": "BMW",
+      "model": "4 Series GTI",
+      "year": 2021,
+      "capacity": 4,
+      "fuelType": "Gasoline",
+      "range": "7.6km/1-litre",
+      "transmission": "Automatic",
+      "price": 530,
+      "image": "https://autojosh.com/wp-content/uploads/2020/06/2021-bmw-4-series-autojosh.jpg"
+    },
+    {
+      "id": 6,
+      "make": "BMW",
+      "model": "4 Series",
+      "year": 2020,
+      "capacity": 4,
+      "fuelType": "Gasoline",
+      "range": "7.2km/1-litre",
+      "transmission": "Automatic",
+      "price": 490,
+      "image": "https://ic.maxabout.us//cars/bmw/bmw-4-series-gran-coupe//BMW_4-Series_Gran_Coupe_1.jpg"
+    },
+    {
+      "id": 6,
+      "make": "BMW",
+      "model": "4 Series",
+      "year": 2020,
+      "capacity": 4,
+      "fuelType": "Gasoline",
+      "range": "7.2km/1-litre",
+      "transmission": "Automatic",
+      "price": 490,
+      "image": "https://ic.maxabout.us//cars/bmw/bmw-4-series-gran-coupe//BMW_4-Series_Gran_Coupe_1.jpg"
     }
   ]
 }
